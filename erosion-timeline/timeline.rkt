@@ -1,8 +1,8 @@
 #lang racket
 
 
-(require (for-syntax "timeline-syntax.rkt")
-         "timeline-syntax.rkt")
+(require (for-syntax "../engine/timeline-syntax.rkt")
+         "../engine/timeline-syntax.rkt")
 
 (require "assemblage-watchdog.rkt"
          "video-spinner-spi.rkt"
@@ -14,7 +14,14 @@
          "images.rkt"
          "bare-videos.rkt")
 
+;;
+;; export all the timelines defined
+;;
+(provide (all-defined-out))
 
+;;
+;; erosion machine timeline
+;;
 (mk-timeline
  outsoursing-paradise-parasite
 
@@ -52,6 +59,7 @@
 
 (define (slurp-outsorsing-paradise)
   (slurp-json-outsoursing-paradise-parasite-timeline ".."))
+
 
 ;;;
 ;;;

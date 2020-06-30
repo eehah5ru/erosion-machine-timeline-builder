@@ -1,6 +1,6 @@
 #lang racket
 
-(require "timeline-syntax.rkt")
+(require "../engine/timeline-syntax.rkt")
 
 (provide (all-defined-out))
 

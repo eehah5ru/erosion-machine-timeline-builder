@@ -433,13 +433,13 @@
           [slurp-json-func-name (format-id #'tml-name "slurp-json-~a-timeline" #'tml-name)])
       #`(begin
           (define (#,timeline-func-name base-dir)
-           (parameterize ([current-directory base-dir])
+           (parameterize ([current-directory (path->complete-path base-dir)])
              (timeline
               tml-name
               tls ...)))
 
           (define (#,slurp-json-func-name base-dir)
-            (timeline->json->clipboard (#,timeline-func-name base-dir)))))]))
+            (timeline->json->clipboard (#,timeline-func-name (path->complete-path base-dir))))))]))
 
 ;;;
 ;;;
