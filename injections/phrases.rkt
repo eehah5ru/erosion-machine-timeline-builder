@@ -15,20 +15,29 @@
 
 
 (define phrases-files
-  (make-parameter "/Users/eehah5ru/Dropbox/eeefff/_works/2019-outsourcing paradise(parasite)/_post-pub/_v2/spinner-deformator - en.md"))
+  (make-parameter (list ;"/Users/eehah5ru/Dropbox/eeefff/_works/2019-outsourcing paradise(parasite)/_post-pub/_v2/spinner-deformator - en.md"
+                   "/Users/eehah5ru/Dropbox/eeefff/_works/2019-outsourcing paradise(parasite)/_post-pub/_v2/spinner-master-of-paradise - en.md"
+                   "/Users/eehah5ru/Dropbox/eeefff/_works/2019-outsourcing paradise(parasite)/_post-pub/_v2/geolocation-deformator - en.md")))
 
+;;;
+;;; make show-text structure from xexpr
+;;;
 (define (xexpr->show-text el)
   (hasheq 'type "showText"
           'label "phrase"
           'class "erosion"
           'text (xexpr->string el)))
 
-
-(define (parse-phrases)
-  (define md (with-input-from-file (phrases-files) #:mode 'text
+;;;
+;;; one file
+;;;
+(define (load-phrases-file p)
+  (define md (with-input-from-file p #:mode 'text
                (lambda ()
                  (read-markdown))))
-  (map (compose1 add-font-size
+
+  (map (compose1 add-font-face
+                 add-font-size
                  add-shadow
                  xexpr->show-text)
        (filter (compose1 not empty?)
@@ -38,3 +47,10 @@
                          (txexpr 'p attrs elems)]
                         [_ '()]))
                     md))))
+
+;;;
+;;; all files
+;;;
+(define (parse-phrases)
+
+  (append (map load-phrases-file (phrases-files))))
