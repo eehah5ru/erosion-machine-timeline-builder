@@ -1,5 +1,7 @@
 #lang racket
 
+(require predicates)
+
 (require lathe-comforts)
 (require lathe-comforts/hash)
 
@@ -8,6 +10,7 @@
 (require json)
 
 (require "../erosion-timeline/timeline.rkt")
+(require "../erosion-timeline/utils.rkt")
 (require "phrases.rkt")
 (require "images.rkt")
 
@@ -158,7 +161,32 @@
     [_ (error "there is no timeline key")]))
 
 
-;; (hash-map (flatten-erosion-timeline)
-;;           (lambda (k v)
-;;             (match v
-;;               [()])))
+
+(define (log-injections label a-pred xs)
+  (display label (current-error-port))
+  (displayln (length (filter a-pred xs))))
+
+;;;
+;;;
+;;; run
+;;;
+;;;
+(define (write-all-injections)
+  (define ts (filter (and? (not? show-image?)
+                           (not? show-text?))
+                     (flatten-erosion-timeline)))
+
+  (log-injections "timeline length: " (const #t) ts)
+
+  (define phrases (parse-phrases))
+
+  (define bkgs (load-backgrounds))
+
+  (define all-injections (flatten (append ts phrases bkgs)))
+
+  (log-injections "images: " show-image? all-injections)
+  (log-injections "texts: " show-text? all-injections)
+  (log-injections "videos: " show-video? all-injections)
+  (log-injections "backgrounds: " add-background? all-injections)
+
+  (write-injections all-injections))
