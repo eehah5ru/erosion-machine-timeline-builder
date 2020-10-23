@@ -38,6 +38,12 @@
 ;;;
 
 ;;;
+;;; add category to the element
+;;;
+(define (add-category cat el)
+  (hash-set el 'category cat))
+
+;;;
 ;;; write injections json
 ;;;
 (define (write-injections is)
@@ -182,7 +188,14 @@
 
   (define bkgs (load-backgrounds))
 
-  (define all-injections (flatten (append ts phrases bkgs)))
+  (define screenshots (map (curry add-category "screenshot")
+                           (load-images "images/screenshots")))
+
+  (define ui (map (curry add-category "ui")
+                      (load-images "images/ui")))
+
+
+  (define all-injections (flatten (append ts phrases bkgs screenshots ui)))
 
   (log-injections "images: " show-image? all-injections)
   (log-injections "texts: " show-text? all-injections)
