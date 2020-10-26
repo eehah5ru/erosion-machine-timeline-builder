@@ -3,6 +3,8 @@
 (require racket/path)
 (require 2htdp/batch-io)
 
+(provide (all-defined-out))
+
 (define dummy-sybtitles-path "data/outsourcing-paradise-parasite/subtitles_test.vtt")
 
 ;;; only mp4 allowed
