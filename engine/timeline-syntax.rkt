@@ -36,6 +36,7 @@
 ;;
 
 ;; erosion delay
+;; in seconds!
 (define settings-delay (make-parameter "EROSION_DELAY"))
 
 (define settings-disabled (make-parameter false))
@@ -44,6 +45,7 @@
 
 ;; (define videos-website-basedir (make-parameter "data/outsourcing-paradise-parasite/videos/"))
 
+;; with trailing /!
 (define settings-base-url
   (make-parameter "HOST_NAME/"))
 
@@ -466,5 +468,25 @@
 
            (mk-timeline #,test-timeline-name
                         (vl))
+
+           (current-directory "..")))]))
+
+;;;
+;;; simple image
+;;;
+(define-syntax (bootstrap-image stx)
+  (syntax-parse
+      stx
+    [(_ il:event-label ip:string d)
+     (let ([test-timeline-name (format-id #'il "test-~a" #'il)]
+           [image-element-name (format-id #'il "~a-image" #'il)])
+       #`(begin
+           (define (il)
+             (image #,image-element-name
+                    (image-website-url ip)
+                    (duration d)))
+
+           (mk-timeline #,test-timeline-name
+                        (il))
 
            (current-directory "..")))]))
