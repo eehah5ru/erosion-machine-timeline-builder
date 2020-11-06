@@ -44,7 +44,7 @@
 
 
 ;;;
-;;; path to output timline json file in tester plugin
+;;; path to output timline json file in FF plugin
 ;;;
 (define timeline-json-path (make-parameter "/Users/eehah5ru/works/2019-outsourcing-paradise/erosion-machine-tester/data/timeline.json"))
 
@@ -67,20 +67,6 @@
 
     [_ (error "there is no timeline key")]))
 
-;;;
-;;;
-;;; assemblages
-;;;
-;;;
-(define (maria-chasy)
-  (assemblage maria-chasy-assemblage
-              (video maria-01-chasy
-                     (video-website-path "maria-01-chasy.mp4")
-                     (duration (identity)))
-
-              (video maria-02-chasy
-                     (video-website-path "maria-02-chasy.mp4")
-                     (duration (identity)))))
 
 
 ;;;
@@ -287,74 +273,202 @@
 ;;
 (mk-timeline
  test-timeline
+ 
+ ;; 
+ ;; imaguru
+ ;; 
+ (hadi-interfaces)
 
+ (perezagruzka)
+ (scroll-rab)
+
+ (screen-is-blinking)
+
+ (code-that-embodies-your-emotional-work)
+ ;; (code-that-embodies-your-emotional-work)
+
+ (outsourcing-orgy)
+ (outsourcing-orgy)
+
+ ;;
+ ;; hadi-dance
+ ;;
+ (hadi-03-tanec-02)
+ (interface-dominatrix-01)
+
+ (water-in-office)
+
+ (breating-artifacts)
+ ;; (breating-artifacts)
+ ;; (breating-artifacts)
+
+ ;; 
+ ;;  maria-chasy
+ ;;  
+ (maria-chasy)
+
+ (video-spinner-spi)
+
+ ;; 
+ ;;  spinner
+ ;;  
+ (spinner-ya-vhozhu-vo-vkus)
+
+ (assemblage spinner-assemblage
+             (spinner-krutit-spinner-04)
+             (spinner-konec))
+ ;; 
+ ;;  hadi-risunok
+ ;;  
  (hadi-01-bolit-spina)
  (hadi-02-risunok)
+ (stop-word-vertical)
 
- (hadi-03-tanec-02)
- (hadi-04-tanec-horiz)
-
- ;; disabled
- ;; (hadi-03-tanec)
-
- (hadi-05-kvartira)
-
- ;; moved to assemblage
- ;; (hadi-06-interface)
- ;; (hadi-07-interface)
- ;; (hadi-08-interface)
- ;; (hadi-09-interface)
- ;; (hadi-10-interface)
-
- (maria-01-chasy)
- (maria-02-chasy)
- (maria-03-yazyk)
-
- ;; disabled
- ;; (maria-04-dance)
-
- (maria-05-dance) ; вставить вместе с МОП
- (vitaly-01-intro)
- (vitaly-02-zabastovka)
-
-
- ;; images for RTV mag
- (affects-are-floating)
- (breating-artifacts)
- (code-that-embodies-your-emotional-work)
- (geolocation-soup)
- (hold-the-spinner)
- (i-want-to-hiccup)
  (island-of-affective-data)
- (make-it-go-round)
+
+ ;; 
+ ;;  tongue-geolocation
+ ;;  
+ (maria-03-yazyk)
+ (taxi-driver)
+
+ (dominatrix-volgograd-01)
+
  (new-geolocation-biography-is-waiting-for-you)
+ ;; (new-geolocation-biography-is-waiting-for-you)
+ ;; (new-geolocation-biography-is-waiting-for-you)
+ ;; (new-geolocation-biography-is-waiting-for-you)
+ ;; (new-geolocation-biography-is-waiting-for-you)
+
+ (geolocation-soup)
+ (geolocation-soup)
+ ;; (geolocation-soup)
+ ;; (geolocation-soup)
+ ;; (geolocation-soup)
+ ;; (geolocation-soup)
+ ;; (geolocation-soup)
+ ;; (geolocation-soup)
+
+ ;; 
+ ;;  hadi-space
+ ;;  
+ (assemblage kvartira-and-sleep-assemblage
+             (hadi-05-kvartira)
+             (sleep-vertical))
+
+ (watchdog)
+ (kot-odin)
+
+ (general-intellect-care)
+ (general-intellect-care)
+ (general-intellect-care)
+ (general-intellect-care)
+ (general-intellect-care)
+ (general-intellect-care)
+ (general-intellect-care)
+
+ ;; 
+ ;; dances
+ ;; 
+ (assemblage dances-in-darkness-assemblage
+             (maria-05-dance)
+             (vitaly-03-fonarik-no-words))
+
+ (vitaly-02-zabastovka)
+ (vitaly-04-fonarik)
+
+ (vremya-prikljucheniy-nastupilo)
+
+ ;; 
+ ;; darkness
+ ;; 
+ (assemblage dances-in-darkness-02-assemblage
+             (hadi-04-tanec-horiz)
+             (vitaly-06-darkness-no-words))
+
+ (vitaly-05-darkness)
+
+ (panic-attack-new-02)
+
+ (cradle-song-03-blur)
+
+ ;; 
+ ;; pause-intro
+ ;; 
+ (assemblage intro-and-pause-assemblage
+             (vitaly-01-intro)
+             (pause))
+
+ (vremya-prikljucheniy-nastupilo)
+
+ (hold-the-spinner)
+ (make-it-go-round)
  (time-screeches-into-bits)
  (you-have-a-task)
+ 
+ )
 
-)
+;;
+;;
+;; RUN FUNCTIONS
+;;
+;;
 
 ;;
+;; timeline factory finction
 ;;
-;; RUN
+;; (define timeline-f mk-spinner-timeline)
+;; use this one below to generate complete timeline
+(define timeline-f mk-test-timeline-timeline)
+
 ;;
+;; ff plugin and elm test env
 ;;
-(define (run)
-  (parameterize ([assets-basedir "data/outsourcing-paradise-parasite/v2/test/"]
-                 ;; set for local test env and ff plugin
-                 ;; unset when generate for eeefff.org
-                 [settings-delay 3]   ;secs
-                 [settings-base-url "https://dev.eeefff.org/"]) ;trailing /
+(define (run-for-local-use)
+  
+  (parameterize ([assets-basedir "data/outsourcing-paradise-parasite/v2/test/"])
+    ;;
+    ;; create dummy missing assets
+    ;;
     (dummy-missing-subtitels (eeeffff-website-base-dir) (assets-basedir))
-    (define tl (mk-spinner-timeline (eeeffff-website-base-dir)))
-    ;; (define tl (mk-test-timeline-timeline (eeeffff-website-base-dir)))
 
-    ;; write timeline to ff plugin
+    ;; set overrides for local test env and ff plugin
+    ;; leave default for eeefff.org
+    (parameterize (                 
+                   [settings-delay 3]   ;secs
+                   [settings-base-url "https://dev.eeefff.org/"]) ;trailing /
+      
+      (define tl (timeline-f (eeeffff-website-base-dir)))
+
+      ;; write timeline to ff plugin
+      (write-timeline tl)
+
+      ;; write timeline to erosion engine's test env
+      (parameterize ([timeline-json-path "/Users/eehah5ru/works/2019-outsourcing-paradise/erosion-machine-2/public/timeline.json"])
+        (write-timeline tl))
+
+      ;;
+      ;; copy scss skeleton to clipboard
+      ;;
+      (string->clipboard
+       (mk-scss-skeleton tl))
+      )))
+
+
+;;
+;; eeefff.org website
+;;
+(define (run-for-eeefff-org)
+  (parameterize ([assets-basedir "data/outsourcing-paradise-parasite/v2/test/"]
+                 [timeline-json-path "/Users/eehah5ru/it/websites/eeefff-org/data/outsourcing-paradise-parasite/v2/test/erosion-machine-timeline.json"])
+    ;;
+    ;; create dummy missing assets
+    ;;
+    (dummy-missing-subtitels (eeeffff-website-base-dir) (assets-basedir))
+
+    (define tl (timeline-f (eeeffff-website-base-dir)))
+
     (write-timeline tl)
-
-    ;; write timeline to erosion engine's test env
-    (parameterize ([timeline-json-path "/Users/eehah5ru/works/2019-outsourcing-paradise/erosion-machine-2/public/timeline.json"])
-      (write-timeline tl))
-
     ;;
     ;; copy scss skeleton to clipboard
     ;;
