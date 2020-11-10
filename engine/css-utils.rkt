@@ -27,6 +27,7 @@
     [(showVideo) 'video]
     [(showText) 'text]
     [(assemblage) 'assemblage]
+    [(chapter) 'chapter]
     [(showImage) 'image]
     [(addClass) 'add-class]
     [(removeClass) 'remove-class]
@@ -108,6 +109,15 @@
                                    (hash-ref an-el 'events))))
                "\n\n"))
 
+;;
+;; chapter -> scss
+;;
+(define/contract (chapter-element->scss an-el)
+  (-> hash? string?)
+
+  (string-join (flatten (list (scss-comment an-el)
+                              (map element->scss
+                                   (hash-ref an-el 'events))))))
 
 (define/contract (element->scss an-el)
   (-> hash? string?)
@@ -115,6 +125,7 @@
   ;; TODO: add support for addClass and removeClass
   (case (element-type an-el)
     [(assemblage) (assemblage-element->scss an-el)]
+    [(chapter) (chapter-element->scss an-el)]
     [(video) (video-element->scss an-el)]
     [(text) (text-element->scss an-el)]
     [(image) (image-element->scss an-el)]

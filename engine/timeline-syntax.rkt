@@ -407,6 +407,22 @@
                             evs2 ...))]))
 
 ;;;
+;;; chapter syntax
+;;;
+(define-syntax (chapter stx)
+  (define-syntax-class chapter-label
+    #:attributes (sym)
+    (pattern cl:id
+             #:attr sym #''cl))
+
+  (syntax-parse
+      stx
+    [(_ cl:chapter-label evs:expr ...)
+     #'(hasheq 'type "chapter"
+               'label (normalize-attr cl.sym)
+               'events (list evs ...))]))
+
+;;;
 ;;; timline syntax
 ;;;
 (define-syntax (timeline stx)
