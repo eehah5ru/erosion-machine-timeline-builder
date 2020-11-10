@@ -30,6 +30,7 @@
          "../erosion-timeline/bare-videos.rkt")
 
 (require "chapters.rkt")
+(require "test-chapters.rkt")
 
  ;;
  ;; absolute path to eeefff's website with all the data
@@ -108,7 +109,7 @@
 ;;
 ;; timeline factory finction
 ;;
-(define timeline-f mk-test-spinner-timeline)
+(define timeline-f mk-test-add-class-mockup-timeline)
 ;; use this one below to generate complete timeline
 ;; (define timeline-f mk-test-timeline-timeline)
 
