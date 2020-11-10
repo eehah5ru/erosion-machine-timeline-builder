@@ -275,137 +275,153 @@
  test-timeline
  
  ;; 
- ;; imaguru
- ;; 
- (hadi-interfaces)
-
- (perezagruzka)
- (scroll-rab)
-
- (screen-is-blinking)
-
- (code-that-embodies-your-emotional-work)
- ;; (code-that-embodies-your-emotional-work)
-
- (outsourcing-orgy)
- (outsourcing-orgy)
-
+ ;; CHAPTER hadi-interfaces
  ;;
- ;; hadi-dance
- ;;
- (hadi-03-tanec-02)
- (interface-dominatrix-01)
+ (chapter hadi-interfaces
+          (hadi-interfaces)
 
- (water-in-office)
+          (perezagruzka)
+          (scroll-rab)
 
- (breating-artifacts)
- ;; (breating-artifacts)
- ;; (breating-artifacts)
+          (screen-is-blinking)
 
- ;; 
- ;;  maria-chasy
- ;;  
- (maria-chasy)
+          (code-that-embodies-your-emotional-work)
+          ;; (code-that-embodies-your-emotional-work)
 
- (video-spinner-spi)
-
- ;; 
- ;;  spinner
- ;;  
- (spinner-ya-vhozhu-vo-vkus)
-
- (assemblage spinner-assemblage
-             (spinner-krutit-spinner-04)
-             (spinner-konec))
- ;; 
- ;;  hadi-risunok
- ;;  
- (hadi-01-bolit-spina)
- (hadi-02-risunok)
- (stop-word-vertical)
-
- (island-of-affective-data)
-
- ;; 
- ;;  tongue-geolocation
- ;;  
- (maria-03-yazyk)
- (taxi-driver)
-
- (dominatrix-volgograd-01)
-
- (new-geolocation-biography-is-waiting-for-you)
- ;; (new-geolocation-biography-is-waiting-for-you)
- ;; (new-geolocation-biography-is-waiting-for-you)
- ;; (new-geolocation-biography-is-waiting-for-you)
- ;; (new-geolocation-biography-is-waiting-for-you)
-
- (geolocation-soup)
- (geolocation-soup)
- ;; (geolocation-soup)
- ;; (geolocation-soup)
- ;; (geolocation-soup)
- ;; (geolocation-soup)
- ;; (geolocation-soup)
- ;; (geolocation-soup)
-
- ;; 
- ;;  hadi-space
- ;;  
- (assemblage kvartira-and-sleep-assemblage
-             (hadi-05-kvartira)
-             (sleep-vertical))
-
- (watchdog)
- (kot-odin)
-
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care)
-
- ;; 
- ;; dances
- ;; 
- (assemblage dances-in-darkness-assemblage
-             (maria-05-dance)
-             (vitaly-03-fonarik-no-words))
-
- (vitaly-02-zabastovka)
- (vitaly-04-fonarik)
-
- (vremya-prikljucheniy-nastupilo)
-
- ;; 
- ;; darkness
- ;; 
- (assemblage dances-in-darkness-02-assemblage
-             (hadi-04-tanec-horiz)
-             (vitaly-06-darkness-no-words))
-
- (vitaly-05-darkness)
-
- (panic-attack-new-02)
-
- (cradle-song-03-blur)
-
- ;; 
- ;; pause-intro
- ;; 
- (assemblage intro-and-pause-assemblage
-             (vitaly-01-intro)
-             (pause))
-
- (vremya-prikljucheniy-nastupilo)
-
- (hold-the-spinner)
- (make-it-go-round)
- (time-screeches-into-bits)
- (you-have-a-task)
+          (outsourcing-orgy)
+          (outsourcing-orgy))
  
+ ;;
+ ;; CHAPTER hadi-dance
+ ;;
+ (chapter hadi-dance
+          (hadi-03-tanec-02)
+          (interface-dominatrix-01)
+
+          (water-in-office)
+
+          (breating-artifacts)
+          ;; (breating-artifacts)
+          ;; (breating-arti)facts)
+          )
+ 
+ ;; 
+ ;; CHAPTER maria-chasy
+ ;;  
+ (chapter maria-chasy
+          (maria-chasy)
+
+          (video-spinner-spi))
+ ;; 
+ ;; CHAPTER spinner
+ ;;  
+ (chapter spinner
+          (spinner-ya-vhozhu-vo-vkus)
+
+          (assemblage spinner-assemblage
+                      (spinner-krutit-spinner-04)
+                      (spinner-konec)))
+
+ ;; 
+ ;; CHAPTER hadi-risunok
+ ;;  
+
+ (chapter hadi-risunok
+          (hadi-01-bolit-spina)
+          (hadi-02-risunok)
+          (stop-word-vertical)
+
+          (island-of-affective-data))
+
+ ;; 
+ ;; CHAPTER tongue-geolocation
+ ;;  
+
+ (chapter tongue-geolocation
+          (maria-03-yazyk)
+          (taxi-driver)
+
+          (dominatrix-volgograd-01)
+
+          (new-geolocation-biography-is-waiting-for-you)
+          ;; (new-geolocation-biography-is-waiting-for-you)
+          ;; (new-geolocation-biography-is-waiting-for-you)
+          ;; (new-geolocation-biography-is-waiting-for-you)
+          ;; (new-geolocation-biography-is-waiting-for-you)
+
+          (geolocation-soup)
+          (geolocation-soup)
+          ;; (geolocation-soup)
+          ;; (geolocation-soup)
+          ;; (geolocation-soup)
+          ;; (geolocation-soup)
+          ;; (geolocation-soup)
+          ;; (geolocation-soup)
+          )
+ ;; 
+ ;; CHAPTER hadi-space
+ ;;  
+ (chapter hadi-space
+          (assemblage kvartira-and-sleep-assemblage
+                      (hadi-05-kvartira)
+                      (sleep-vertical))
+
+          (watchdog)
+          (kot-odin)
+
+          (general-intellect-care)
+          (general-intellect-care)
+          (general-intellect-care)
+          (general-intellect-care)
+          (general-intellect-care)
+          (general-intellect-care)
+          (general-intellect-care)
+          )
+
+ ;; 
+ ;; CHAPTER dances
+ ;; 
+ (chapter dances
+          (assemblage dances-in-darkness-assemblage
+                      (maria-05-dance)
+                      (vitaly-03-fonarik-no-words))
+
+          (vitaly-02-zabastovka)
+          (vitaly-04-fonarik)
+
+          (vremya-prikljucheniy-nastupilo)
+          )
+
+ ;; 
+ ;; CHAPTER darkness
+ ;; 
+ (chapter darkness
+          (assemblage dances-in-darkness-02-assemblage
+                      (hadi-04-tanec-horiz)
+                      (vitaly-06-darkness-no-words))
+
+          (vitaly-05-darkness)
+
+          (panic-attack-new-02)
+
+          (cradle-song-03-blur)
+          )
+
+ ;; 
+ ;; CHAPTER pause-intro
+ ;; 
+ (chapter pause-intro
+          (assemblage intro-and-pause-assemblage
+                      (vitaly-01-intro)
+                      (pause))
+
+          (vremya-prikljucheniy-nastupilo)
+
+          (hold-the-spinner)
+          (make-it-go-round)
+          (time-screeches-into-bits)
+          (you-have-a-task)
+          ) 
  )
 
 ;;
