@@ -29,8 +29,7 @@
          "../erosion-timeline/images.rkt"
          "../erosion-timeline/bare-videos.rkt")
 
-(require "test-videos.rkt")
-(require "images.rkt")
+(require "chapters.rkt")
 
  ;;
  ;; absolute path to eeefff's website with all the data
@@ -70,358 +69,34 @@
 
 
 ;;;
-;;;
-;;; timeline for imaguru
-;;; +++
-;;;
-(mk-timeline
- imaguru
-
- (hadi-interfaces)
-
- (perezagruzka)
- (scroll-rab)
-
- (screen-is-blinking)
-
- (code-that-embodies-your-emotional-work)
- (code-that-embodies-your-emotional-work)
-
- (outsourcing-orgy)
- (outsourcing-orgy)
-
-
- )
-
-;;;
-;;;
-;;; for ...
-;;; +++
-;;;
-(mk-timeline
- hadi-dance
-
- (hadi-03-tanec-02)
- (interface-dominatrix-01)
-
- (water-in-office)
-
- (breating-artifacts)
- (breating-artifacts)
- (breating-artifacts)
- )
-
-;;;
-;;;
-;;; for telegram?
-;;; +++ telegram
-;;;
-(mk-timeline
- maria-chasy
-
- (maria-chasy)
-
- (video-spinner-spi)
-
- ;; (spinner-ya-vhozhu-vo-vkus)
- ;; (spinner-krutit-spinner-04)
- ;; (spinner-konec)
- )
-
-;;
-;;
-;; for toloka
-;;
-;;
-(mk-timeline
- spinner
- (spinner-ya-vhozhu-vo-vkus)
-
- (assemblage spinner-assemblage
-             (spinner-krutit-spinner-04)
-             (spinner-konec)))
-
-;;;
-;;;
-;;; for ...
-;;; +++
-;;;
-(mk-timeline
- hadi-risunok
-
- (hadi-01-bolit-spina)
- (hadi-02-risunok)
- (stop-word-vertical)
-
- (island-of-affective-data))
-
-;;;
-;;;
-;;; for ...
-;;; +++ matterport ww2 museum
-;;;
-(mk-timeline
- tongue-geolocation
-
- (maria-03-yazyk)
- (taxi-driver)
-
- (dominatrix-volgograd-01)
-
- (new-geolocation-biography-is-waiting-for-you)
- (new-geolocation-biography-is-waiting-for-you)
- (new-geolocation-biography-is-waiting-for-you)
- (new-geolocation-biography-is-waiting-for-you)
- (new-geolocation-biography-is-waiting-for-you)
-
- (geolocation-soup)
- (geolocation-soup)
- (geolocation-soup)
- (geolocation-soup)
- (geolocation-soup)
- (geolocation-soup)
- (geolocation-soup)
- (geolocation-soup))
-
-;;;
-;;;
-;;; for ...
-;;; +++ bir.by - dana holdings
-;;;
-(mk-timeline
- hadi-space
-
- (assemblage kvartira-and-sleep-assemblage
-             (hadi-05-kvartira)
-             (sleep-vertical))
-
- (watchdog)
- (kot-odin)
-
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care)
- (general-intellect-care))
-
-;;;
-;;;
-;;; for ...
-;;; +++ google komkon 2019 spreadsheet
-;;;
-(mk-timeline
- dances
-
- (assemblage dances-in-darkness-assemblage
-             (maria-05-dance)
-             (vitaly-03-fonarik-no-words))
-
- (vitaly-02-zabastovka)
- (vitaly-04-fonarik)
-
- (vremya-prikljucheniy-nastupilo)
-
- )
-
-;;;
-;;;
-;;; for ...
-;;; +++ casino
-;;;
-(mk-timeline
- darkness
-
- (assemblage dances-in-darkness-02-assemblage
-             (hadi-04-tanec-horiz)
-             (vitaly-06-darkness-no-words))
-
- (vitaly-05-darkness)
-
- (panic-attack-new-02)
-
- (cradle-song-03-blur)
- )
-
-;;;
-;;;
-;;; for ..
-;;; +++ great stone
-;;;
-(mk-timeline
- pause-intro
-
- (assemblage intro-and-pause-assemblage
-             (vitaly-01-intro)
-             (pause))
-
- (vremya-prikljucheniy-nastupilo)
-
- (hold-the-spinner)
- (make-it-go-round)
- (time-screeches-into-bits)
- (you-have-a-task)
- )
-
-
-;;;
 ;;
 ;;
 ;; timeline
-;;
+;; split in chapters
 ;;
 (mk-timeline
  test-timeline
+
  
- ;; 
- ;; CHAPTER hadi-interfaces
- ;;
- (chapter hadi-interfaces
-          (hadi-interfaces)
-
-          (perezagruzka)
-          (scroll-rab)
-
-          (screen-is-blinking)
-
-          (code-that-embodies-your-emotional-work)
-          ;; (code-that-embodies-your-emotional-work)
-
-          (outsourcing-orgy)
-          (outsourcing-orgy))
+ (hadi-interfaces)
  
- ;;
- ;; CHAPTER hadi-dance
- ;;
- (chapter hadi-dance
-          (hadi-03-tanec-02)
-          (interface-dominatrix-01)
+ (hadi-dance)
 
-          (water-in-office)
-
-          (breating-artifacts)
-          ;; (breating-artifacts)
-          ;; (breating-arti)facts)
-          )
+ (maria-chasy)
  
- ;; 
- ;; CHAPTER maria-chasy
- ;;  
- (chapter maria-chasy
-          (maria-chasy)
+ (spinner)
 
-          (video-spinner-spi))
- ;; 
- ;; CHAPTER spinner
- ;;  
- (chapter spinner
-          (spinner-ya-vhozhu-vo-vkus)
+ (hadi-risunok)
 
-          (assemblage spinner-assemblage
-                      (spinner-krutit-spinner-04)
-                      (spinner-konec)))
+ (tongue-geolocation)
 
- ;; 
- ;; CHAPTER hadi-risunok
- ;;  
+ (hadi-space)
 
- (chapter hadi-risunok
-          (hadi-01-bolit-spina)
-          (hadi-02-risunok)
-          (stop-word-vertical)
-
-          (island-of-affective-data))
-
- ;; 
- ;; CHAPTER tongue-geolocation
- ;;  
-
- (chapter tongue-geolocation
-          (maria-03-yazyk)
-          (taxi-driver)
-
-          (dominatrix-volgograd-01)
-
-          (new-geolocation-biography-is-waiting-for-you)
-          ;; (new-geolocation-biography-is-waiting-for-you)
-          ;; (new-geolocation-biography-is-waiting-for-you)
-          ;; (new-geolocation-biography-is-waiting-for-you)
-          ;; (new-geolocation-biography-is-waiting-for-you)
-
-          (geolocation-soup)
-          (geolocation-soup)
-          ;; (geolocation-soup)
-          ;; (geolocation-soup)
-          ;; (geolocation-soup)
-          ;; (geolocation-soup)
-          ;; (geolocation-soup)
-          ;; (geolocation-soup)
-          )
- ;; 
- ;; CHAPTER hadi-space
- ;;  
- (chapter hadi-space
-          (assemblage kvartira-and-sleep-assemblage
-                      (hadi-05-kvartira)
-                      (sleep-vertical))
-
-          (watchdog)
-          (kot-odin)
-
-          (general-intellect-care)
-          (general-intellect-care)
-          (general-intellect-care)
-          (general-intellect-care)
-          (general-intellect-care)
-          (general-intellect-care)
-          (general-intellect-care)
-          )
-
- ;; 
- ;; CHAPTER dances
- ;; 
- (chapter dances
-          (assemblage dances-in-darkness-assemblage
-                      (maria-05-dance)
-                      (vitaly-03-fonarik-no-words))
-
-          (vitaly-02-zabastovka)
-          (vitaly-04-fonarik)
-
-          (vremya-prikljucheniy-nastupilo)
-          )
-
- ;; 
- ;; CHAPTER darkness
- ;; 
- (chapter darkness
-          (assemblage dances-in-darkness-02-assemblage
-                      (hadi-04-tanec-horiz)
-                      (vitaly-06-darkness-no-words))
-
-          (vitaly-05-darkness)
-
-          (panic-attack-new-02)
-
-          (cradle-song-03-blur)
-          )
-
- ;; 
- ;; CHAPTER pause-intro
- ;; 
- (chapter pause-intro
-          (assemblage intro-and-pause-assemblage
-                      (vitaly-01-intro)
-                      (pause))
-
-          (vremya-prikljucheniy-nastupilo)
-
-          (hold-the-spinner)
-          (make-it-go-round)
-          (time-screeches-into-bits)
-          (you-have-a-task)
-          ) 
+ (dances)
+ 
+ (darkness)
+ 
+ (pause-intro)
  )
 
 ;;
@@ -433,9 +108,9 @@
 ;;
 ;; timeline factory finction
 ;;
-;; (define timeline-f mk-spinner-timeline)
+(define timeline-f mk-test-spinner-timeline)
 ;; use this one below to generate complete timeline
-(define timeline-f mk-test-timeline-timeline)
+;; (define timeline-f mk-test-timeline-timeline)
 
 ;;
 ;; ff plugin and elm test env
