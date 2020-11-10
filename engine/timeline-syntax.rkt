@@ -504,5 +504,21 @@
 
            (mk-timeline #,test-timeline-name
                         (il))
-
+           ;; FIXME: WHATTTT????
            (current-directory "..")))]))
+
+;;;
+;;; chapter helper
+;;;
+(define-syntax (mk-chapter stx)
+  (syntax-parse
+      stx
+    [(_ ch-name:event-label evs:expr ...+)
+     (let ([test-timeline-name (format-id #'ch-name "test-~a" #'ch-name)])
+       #`(begin
+           ;; chapter function
+           (define (ch-name)
+             (chapter ch-name
+                      evs ...))
+           (mk-timeline #,test-timeline-name
+                        (ch-name))))]))
