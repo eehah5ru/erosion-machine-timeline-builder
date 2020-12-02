@@ -42,5 +42,5 @@
 (provide (all-defined-out))
 
 (mk-chapter add-class-mockup
-            (breating-artifacts)
+            ;; (breating-artifacts)
             (outsourcing-orgy))

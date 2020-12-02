@@ -98,6 +98,8 @@
  (darkness)
  
  (pause-intro)
+
+ (removals)
  )
 
 ;;
@@ -109,9 +111,9 @@
 ;;
 ;; timeline factory finction
 ;;
-(define timeline-f mk-test-add-class-mockup-timeline)
+;; (define timeline-f mk-test-removals-timeline)
 ;; use this one below to generate complete timeline
-;; (define timeline-f mk-test-timeline-timeline)
+(define timeline-f mk-test-timeline-timeline)
 
 ;;
 ;; ff plugin and elm test env

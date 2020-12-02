@@ -223,3 +223,31 @@
 
             (cradle-song-03-blur)
             )
+
+;;
+;; CHAPTER removals
+;;
+(mk-chapter removals
+            (assemblage removals-assemblage
+                        (start-time)
+
+                        (hide-element removals-1)
+                        (hide-element removals-2
+                                      (delayed 1000))
+                        (hide-element removals-3
+                                      (delayed 2000))
+                        (hide-element removals-4
+                                      (delayed 3000))
+                        (hide-element removals-5
+                                      (delayed 4000))
+                        (hide-element removals-6
+                                      (delayed 5000))
+                        (hide-element removals-7
+                                      (delayed 6000))
+                        (hide-element removals-8
+                                      (delayed 7000))
+                        (hide-element removals-9
+                                      (delayed 8000))
+                        (hide-element removals-10
+                                      (delayed 9000))
+                        ))
