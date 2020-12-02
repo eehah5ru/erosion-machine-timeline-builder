@@ -31,6 +31,7 @@
     [(showImage) 'image]
     [(addClass) 'add-class]
     [(removeClass) 'remove-class]
+    [(hideElement) 'hide-element]
     [else 'unknown]))
 
 
@@ -119,6 +120,16 @@
                               (map element->scss
                                    (hash-ref an-el 'events))))))
 
+;;
+;; hide element -> scss
+;;
+;; returns empty string
+;;
+(define/contract (hide-element->scss an-el)
+  (-> hash? string?)
+
+  "")
+
 (define/contract (element->scss an-el)
   (-> hash? string?)
 
@@ -130,4 +141,5 @@
     [(text) (text-element->scss an-el)]
     [(image) (image-element->scss an-el)]
     [(add-class) (add-class->scss an-el)]
+    [(hide-element) (hide-element->scss an-el)]
     [else (error "cannot convert ersion element to scss" an-el)]))

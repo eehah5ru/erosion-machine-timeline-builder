@@ -390,6 +390,20 @@
         attrs ...)]))
 
 ;;;
+;;; hideElement syntax
+;;;
+;;; can be delayed but without duration
+;;;
+(define-syntax (hide-element stx)
+  (syntax-parse stx
+    [(_ hel:event-label attrs:expr ...)
+     #'(hash-union
+        (hasheq 'type "hideElement"
+                'label (normalize-attr 'hel)
+                'id (normalize-attr 'hel))
+        attrs ...)]))
+
+;;;
 ;;; assemblage syntax
 ;;;
 (define-syntax (assemblage stx)
