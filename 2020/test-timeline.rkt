@@ -31,11 +31,14 @@
 
 (require "chapters.rkt")
 (require "test-chapters.rkt")
+(require (only-in "test-videos.rkt"
+                  [start-time start-time-video]))
 
- ;;
- ;; absolute path to eeefff's website with all the data
- ;;
- (define eeeffff-website-base-dir (make-parameter "/Users/eehah5ru/it/websites/eeefff-org"))
+
+;;
+;; absolute path to eeefff's website with all the data
+;;
+(define eeeffff-website-base-dir (make-parameter "/Users/eehah5ru/it/websites/eeefff-org"))
 
 ;;;
 ;;; host name for assets
@@ -115,6 +118,11 @@
 ;; use this one below to generate complete timeline
 (define timeline-f mk-test-timeline-timeline)
 
+;;;
+;;; final-erosion-event
+;;;
+(define final-erosion-event start-time-video)
+
 ;;
 ;; ff plugin and elm test env
 ;;
@@ -128,9 +136,13 @@
 
     ;; set overrides for local test env and ff plugin
     ;; leave default for eeefff.org
-    (parameterize (                 
+    (parameterize* (                 
                    [settings-delay 3]   ;secs
-                   [settings-base-url "https://dev.eeefff.org/"]) ;trailing /
+                   [settings-base-url "https://dev.eeefff.org/"]
+                   [settings-final-erosion
+                    (parameterize ([current-directory (eeeffff-website-base-dir)])
+                      (hash-set (final-erosion-event)
+                                'position "overlay"))])
       
       (define tl (timeline-f (eeeffff-website-base-dir)))
 
