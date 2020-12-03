@@ -93,13 +93,13 @@
 ;;        "do not move and wait for them"
 ;;        (duration (dur spinner-video))
 ;;        (delayed (dur spinner-video))
-;;        (position 'absolute))
+;;        (position 'replace))
 
 ;;   (video spinner-video
 ;;            "data/outsourcing-paradise-parasite/selected-04/blur-08.mp4"
 ;;            (duration (* 2))
 ;;            (looped true)
-;;            (position 'absolute)))
+;;            (position 'replace)))
 
 ;;  )
 
@@ -114,21 +114,21 @@
 ;;  (text no-name-outsourcers-01
 ;;        "no-name outsourcers will be here in a short time"
 ;;        (duration 2000)
-;;        (position 'absolute
+;;        (position 'replace
 ;;                  ))
 
 ;;  ;; just image
 ;;  (image participants-pic
 ;;        "https://eeefff.org/images/error-friendly-networks/participants.jpg"
 ;;        (duration 2000)
-;;        (position 'absolute
+;;        (position 'replace
 ;;                  ))
 
 ;;  ;; gif falling diagram
 ;;  (image falling-diagram
 ;;        "https://eeefff.org/images/error-friendly-networks/out-640.gif"
 ;;        (duration 2000)
-;;        (position 'absolute
+;;        (position 'replace
 ;;                  ))
 
 ;;  ;; assemblage
@@ -141,13 +141,13 @@
 ;;        "do not move and wait for them"
 ;;        (duration (* 2 (dur spinner-video)))
 ;;        (delayed (dur spinner-video))
-;;        (position 'absolute))
+;;        (position 'replace))
 
 ;;   (video spinner-video
 ;;            "data/outsourcing-paradise-parasite/selected-04/bots.mp4"
 ;;            (duration (* 4))
 ;;            (looped true)
-;;            (position 'absolute))
+;;            (position 'replace))
 
 ;;   (add-class some-class-to-video
 ;;              'some-class

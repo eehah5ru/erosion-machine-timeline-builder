@@ -8,7 +8,7 @@
   (image general-intellect-care-image
          (image-website-url "general-intellect-care.gif")
          (duration (* 1 13520))
-         (position 'absolute)))
+         (position 'replace)))
 
 
 (mk-timeline test-general-intellect-care

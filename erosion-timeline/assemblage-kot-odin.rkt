@@ -11,7 +11,7 @@
                      "data/outsourcing-paradise-parasite/videos/spinner-kot-odin.mp4"
                      (duration (identity))
                      (looped false)
-                     (position 'absolute))
+                     (position 'replace))
 
               (text kot-odin-text
                     "Together let's find a gesture that will be algorithmized well"

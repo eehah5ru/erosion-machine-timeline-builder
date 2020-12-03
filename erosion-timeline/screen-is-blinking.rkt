@@ -14,7 +14,7 @@
 ;;          (video-website-path "cradle-song-02-screen.mp4")
 ;;          (duration (identity))
 ;;          (looped false)
-;;          (position 'absolute)))
+;;          (position 'replace)))
 
 ;; (mk-timeline test-screen-is-blinking
 ;;              (screen-is-blinking))

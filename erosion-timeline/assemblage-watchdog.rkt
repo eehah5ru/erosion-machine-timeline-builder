@@ -11,12 +11,12 @@
                      "data/outsourcing-paradise-parasite/videos/spinner-watchdog-session.mp4"
                      (duration (identity))
                      (looped false)
-                     (position 'absolute))
+                     (position 'replace))
 
               (text watchdog-text-01
                     "Watchdog position"
                     (duration (dur watchdog-video))
-                    (position 'absolute))
+                    (position 'replace))
 
               (text watchdog-text-02
                     "allows algorithms to make sure that you are neither a script nor a bot, but a human"
