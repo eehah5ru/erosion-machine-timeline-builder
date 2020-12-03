@@ -41,6 +41,8 @@
 
 (define settings-disabled (make-parameter false))
 
+(define settings-final-erosion (make-parameter (delay (error "settings-final-erosion parameter  must be initialized"))))
+
 (define assets-basedir (make-parameter "data/outsourcing-paradise-parasite/"))
 
 ;; (define videos-website-basedir (make-parameter "data/outsourcing-paradise-parasite/videos/"))
@@ -438,7 +440,10 @@
 
 ;;;
 ;;; timline syntax
-;;;
+;;; params:
+;;; - settings-disabled - bool
+;;; - settings-delay - secs
+;;; - settings-final-erosion: event
 (define-syntax (timeline stx)
   (syntax-parse
    stx
@@ -449,7 +454,9 @@
          (displayln 'runtime-timeline)
          (pretty-print durations)
          (hasheq 'config (hasheq 'disabled  (settings-disabled)
-                                 'delay (settings-delay))
+                                 'delay (settings-delay)
+                                 'final-erosion (force (settings-final-erosion))
+                                 )
                  'timeline (list tls ...))))]))
 
 
@@ -473,11 +480,6 @@
           (define (#,slurp-json-func-name base-dir)
             (timeline->json->clipboard (#,timeline-func-name (path->complete-path base-dir))))))]))
 
-;;;
-;;;
-;;; HELPERS
-;;;
-;;;
 
 ;;;
 ;;; simple video
@@ -494,7 +496,7 @@
                     (video-website-path vp)
                     (duration (identity))
                     (looped false)
-                    (position 'absolute)))
+                    (position 'replace)))
 
            (mk-timeline #,test-timeline-name
                         (vl))
