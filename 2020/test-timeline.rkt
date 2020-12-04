@@ -165,8 +165,12 @@
 ;; eeefff.org website
 ;;
 (define (run-for-eeefff-org)
-  (parameterize ([assets-basedir "data/outsourcing-paradise-parasite/v2/test/"]
-                 [timeline-json-path "/Users/eehah5ru/it/websites/eeefff-org/data/outsourcing-paradise-parasite/v2/test/erosion-machine-timeline.json"])
+  (parameterize* ([assets-basedir "data/outsourcing-paradise-parasite/v2/test/"]
+                  [timeline-json-path "/Users/eehah5ru/it/websites/eeefff-org/data/outsourcing-paradise-parasite/v2/test/erosion-machine-timeline.json"]
+                  [settings-final-erosion
+                    (parameterize ([current-directory (eeeffff-website-base-dir)])
+                      (hash-set (final-erosion-event)
+                                'position "overlay"))])
     ;;
     ;; create dummy missing assets
     ;;
