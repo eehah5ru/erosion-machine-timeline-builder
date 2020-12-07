@@ -26,5 +26,5 @@
                     (duration (max (dur water-in-office-01-video)
                                    (dur water-in-office-02-video))))))
 
-(mk-timeline test-water-in-office
+(mk-timeline test-water-in-office (empty-splash-screen-text)
              (water-in-office))

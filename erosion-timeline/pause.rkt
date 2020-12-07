@@ -15,5 +15,5 @@
                     "4-MINUTES PAUSE"
                     (duration (dur pause-video)))))
 
-(mk-timeline test-pause
+(mk-timeline test-pause (empty-splash-screen-text)
              (pause))

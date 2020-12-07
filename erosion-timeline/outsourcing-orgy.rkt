@@ -17,7 +17,7 @@
                'outsourcing-orgy-image
                (delayed 2000))))
 
-(mk-timeline test-outsourcing-orgy
+(mk-timeline test-outsourcing-orgy (empty-splash-screen-text)
              (outsourcing-orgy))
 
 (current-directory "..")

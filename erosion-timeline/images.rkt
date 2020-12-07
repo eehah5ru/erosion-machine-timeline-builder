@@ -11,7 +11,7 @@
          (position 'replace)))
 
 
-(mk-timeline test-general-intellect-care
+(mk-timeline test-general-intellect-care (empty-splash-screen-text)
              (general-intellect-care))
 
 (current-directory "..")

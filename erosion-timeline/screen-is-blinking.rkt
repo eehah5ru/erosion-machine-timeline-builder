@@ -16,7 +16,7 @@
 ;;          (looped false)
 ;;          (position 'replace)))
 
-;; (mk-timeline test-screen-is-blinking
+;; (mk-timeline test-screen-is-blinking (empty-splash-screen-text)
 ;;              (screen-is-blinking))
 
 ;; (current-directory "..")

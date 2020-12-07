@@ -17,5 +17,5 @@
                     "Together let's find a gesture that will be algorithmized well"
                     (duration (dur kot-odin-video)))))
 
-(mk-timeline test-assemblage-kot-odin
+(mk-timeline test-assemblage-kot-odin (empty-splash-screen-text)
              (kot-odin))

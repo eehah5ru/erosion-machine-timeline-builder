@@ -22,5 +22,5 @@
                     "allows algorithms to make sure that you are neither a script nor a bot, but a human"
                     (duration (dur watchdog-video)))))
 
-(mk-timeline test-timeline-assemblage-watchdog
+(mk-timeline test-timeline-assemblage-watchdog (empty-splash-screen-text)
              (watchdog))

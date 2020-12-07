@@ -11,5 +11,5 @@
          (looped false)
          (position 'replace)))
 
-(mk-timeline test-timeline-video-spinner-spi
+(mk-timeline test-timeline-video-spinner-spi (empty-splash-screen-text)
              (video-spinner-spi))

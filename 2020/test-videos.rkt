@@ -9,14 +9,14 @@
 ;;
 
 (bootstrap-video hadi-01-bolit-spina
-                 "hadi-01-bolit-spina.mp4")
+                 "hadi-01-bolit-spina-vertical.mp4")
 
 
 (bootstrap-video hadi-02-risunok
-                 "hadi-02-risunok.mp4")
+                 "hadi-02-risunok-vertical.mp4")
 
 (bootstrap-video hadi-03-tanec-02
-                 "hadi-03-tanec-02.mp4")
+                 "hadi-03-tanec-02-vertical.mp4")
 
 (bootstrap-video hadi-03-tanec
                  "hadi-03-tanec.mp4")

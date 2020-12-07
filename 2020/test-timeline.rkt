@@ -33,7 +33,7 @@
 (require "test-chapters.rkt")
 (require (only-in "test-videos.rkt"
                   [start-time start-time-video]))
-
+(require "splash-screen-text.rkt")
 
 ;;
 ;; absolute path to eeefff's website with all the data
@@ -80,8 +80,10 @@
 ;;
 (mk-timeline
  test-timeline
+ ;; splash screen text
+ (mk-splash-screen-text)
 
- 
+ ;; events
  (hadi-interfaces)
  
  (hadi-dance)
