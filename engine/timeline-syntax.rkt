@@ -406,6 +406,12 @@
         attrs ...)]))
 
 ;;;
+;;;
+;;; complex events
+;;;
+;;;
+
+;;;
 ;;; assemblage syntax
 ;;;
 (define-syntax (assemblage stx)
@@ -439,6 +445,25 @@
                'events (list evs ...))]))
 
 ;;;
+;;; splash-screen-text syntax
+;;;
+(define-syntax (splash-screen-text stx)
+  (syntax-parse
+      stx
+    [(_ (ru phrases-ru ...+) (en phrases-en ...+))
+     #`(hasheq 'ru (list phrases-ru ...)
+               'en (list phrases-en ...))]))
+
+
+;;;
+;;; empty splash screen text
+;;;
+(define (empty-splash-screen-text)
+  (splash-screen-text
+   (ru "EMPTY_RU")
+   (en "EMPTY_EN")))
+
+;;;
 ;;; timline syntax
 ;;; params:
 ;;; - settings-disabled - bool
@@ -447,7 +472,7 @@
 (define-syntax (timeline stx)
   (syntax-parse
    stx
-   [(_ el:event-label tls:expr ...+)
+   [(_ el:event-label splash-screen-text-expr:expr tls:expr ...+)
     (displayln (syntax->datum #'el))
     #'(force-timeline
        (begin
@@ -456,6 +481,7 @@
          (hasheq 'config (hasheq 'disabled  (settings-disabled)
                                  'delay (settings-delay)
                                  'final-erosion (force (settings-final-erosion))
+                                 'splash-screen-text splash-screen-text-expr
                                  )
                  'timeline (list tls ...))))]))
 
@@ -499,6 +525,7 @@
                     (position 'replace)))
 
            (mk-timeline #,test-timeline-name
+                        (empty-splash-screen-text)
                         (vl))
 
            (current-directory "..")))]))
@@ -519,6 +546,7 @@
                     (duration d)))
 
            (mk-timeline #,test-timeline-name
+                        (empty-splash-screen-text)
                         (il))
            ;; FIXME: WHATTTT????
            (current-directory "..")))]))
@@ -537,4 +565,5 @@
              (chapter ch-name
                       evs ...))
            (mk-timeline #,test-timeline-name
+                        (empty-splash-screen-text)
                         (ch-name))))]))
